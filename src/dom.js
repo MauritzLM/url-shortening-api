@@ -1,3 +1,3 @@
 // create shortened link ui
-// display shortened link
+// function to display shortened link using json
 // mobile navbar
