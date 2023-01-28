@@ -1,19 +1,33 @@
 import { getShortLink } from "./fetch";
 
-// get url from input when button is clicked*
+const form = document.querySelector("form");
 const link = document.querySelector("#url");
 
-// test url
-let url = 'https://howlongtobeat.com/game/97298om/';
+// event listener on submit to get url and run getShortLink
 
-const myRequest = new Request(`https://api.shrtco.de/v2/shorten?url=${url}`, {
-    method: 'GET',
-    headers: {
-        accept: "application/json",
-    },
-    mode: 'cors',
-    cache: 'default',
-});
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-getShortLink(myRequest);
+    // url to shorten
+    let url = link.value;
+
+    const myRequest = new Request(`https://api.shrtco.de/v2/shorten?url=${url}`, {
+        method: 'GET',
+        headers: {
+            accept: "application/json",
+        },
+        mode: 'cors',
+        cache: 'default',
+    });
+
+    // fetch short link
+    getShortLink(myRequest);
+
+    // reset text field
+    link.value = '';
+})
+
+
+
+
 
