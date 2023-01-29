@@ -9,16 +9,19 @@ function createLinkDiv(link, short) {
 
     // short link div
     const shortLinkDiv = document.createElement("div")
-    // short link 
-    const shortLink = document.createElement("p");
-    shortLink.textContent = short;
+    shortLinkDiv.textContent = short;
+
+    // short link ?
+    // const shortLink = document.createElement("p");
+    // shortLink.textContent = short;
+    // shortLink.classList.add("short");
 
     // button
     const copyButton = document.createElement("button");
-    copyButton.textContent = "copy";
+    copyButton.textContent = "Copy";
     copyButton.classList.add("copy");
 
-    shortLinkDiv.append(shortLink, copyButton);
+    shortLinkDiv.append(copyButton);
     div.append(orignaLink, shortLinkDiv)
 
     return div;
@@ -37,6 +40,22 @@ export function displayResult(json) {
     let linksDiv = document.querySelector(".links-list");
 
     linksDiv.appendChild(div);
+}
+
+// display storage
+export function displayStorage(array) {
+    // loop over array
+    array.forEach(obj => {
+        let link = obj.result.original_link;
+        // get short link
+        let short = obj.result.full_short_link;
+        // 
+        let div = createLinkDiv(link, short);
+
+        let linksDiv = document.querySelector(".links-list");
+
+        linksDiv.appendChild(div);
+    });
 }
 
 // mobile navbar
