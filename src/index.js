@@ -1,30 +1,72 @@
 import { getShortLink } from "./fetch";
+import { displayStorage } from "./dom";
 
 const form = document.querySelector("form");
 const link = document.querySelector("#url");
 
-// event listener on submit to get url and run getShortLink
+// array to store links
+let linksArray;
+// get local storage if it exists
+(function getStorage() {
+    if (localStorage.getItem('links')) {
+        const links = JSON.parse(localStorage.getItem('links'))
+        linksArray = [...links];
+        displayStorage(linksArray);
+    }
 
+    else {
+        linksArray = [];
+    }
+})();
+
+// event listener on submit to get url and run getShortLink
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // url to shorten
-    let url = link.value;
+    // check if input is valid
+    if (!link.validity.valid) {
+        // display error message*
+        return
+    }
 
-    const myRequest = new Request(`https://api.shrtco.de/v2/shorten?url=${url}`, {
-        method: 'GET',
-        headers: {
-            accept: "application/json",
-        },
-        mode: 'cors',
-        cache: 'default',
-    });
+    else {
+        // url to shorten
+        let url = link.value;
 
-    // fetch short link
-    getShortLink(myRequest);
+        const myRequest = new Request(`https://api.shrtco.de/v2/shorten?url=${url}`, {
+            method: 'GET',
+            headers: {
+                accept: "application/json",
+            },
+            mode: 'cors',
+            cache: 'default',
+        });
 
-    // reset text field
-    link.value = '';
+        // fetch short link
+        getShortLink(myRequest, linksArray);
+
+        // reset text field
+        link.value = '';
+    }
+
+});
+
+const linksList = document.querySelector(".links-list");
+
+// event to copy link to clipboard
+linksList.addEventListener('click', (e) => {
+    let element = e.target;
+    if (element.matches(".copy")) {
+        // get short link
+        let linkToCopy = element.closest("div").firstChild.data;
+        // copy link to clipboard
+        navigator.clipboard.writeText(linkToCopy);
+        // change text content of button to copied, all other buttons = copy*
+        // loop over all copy buttons and change to copy;*
+        // toggle style class*
+        element.textContent = 'Copied!';
+
+    }
 })
 
 
