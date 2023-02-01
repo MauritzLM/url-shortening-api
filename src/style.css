@@ -11,10 +11,68 @@ body {
     font-size: 1.8rem;
 }
 
+header {
+    position: relative;
+}
+
+.dropdown {
+    float: right;
+    font-size: 1.5rem;
+}
+
+ion-icon {
+    height: 34px;
+    width: 34px;
+    color: hsl(0, 0%, 75%);
+}
+
+nav {
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: hsl(257, 27%, 26%);
+    width: 90%;
+    border-radius: 10px;
+    left: 1em;
+}
+
+.dropdown:focus-within+nav {
+    display: block;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
 }
+
+nav li {
+    padding: .5em;
+}
+
+ul a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    color: hsl(0, 0%, 100%);
+}
+
+.copied {
+    background-color: hsl(260, 8%, 14%);
+}
+
+.error {
+    visibility: collapse;
+}
+
+/* #url:invalid+.error {
+    visibility: visible;
+} */
 
 .attribution {
     font-size: 11px;
