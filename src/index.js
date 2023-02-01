@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
     // check if input is valid
     if (!link.validity.valid) {
         // display error message
-        error.style.visibility = "visible";
+        error.style.display = "block";
         return
     }
 
@@ -49,7 +49,7 @@ form.addEventListener('submit', (e) => {
 
         // reset text field
         link.value = '';
-        error.style.visibility = "collapse";
+        error.style.display = "none";
     }
 
 });
