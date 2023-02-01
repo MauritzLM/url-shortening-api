@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* general styles */
 html {
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
@@ -9,12 +10,20 @@ html {
 
 body {
     font-size: 1.8rem;
+    margin: 0;
+}
+
+header,
+main,
+footer {
+    padding: 1em;
 }
 
 header {
     position: relative;
 }
 
+/* navigation */
 .dropdown {
     float: right;
     font-size: 1.5rem;
@@ -58,21 +67,89 @@ img {
     width: 100%;
 }
 
+main {
+    background-color: hsl(257, 7%, 63%);
+}
+
+/* shortened links */
+.links-list div {
+    background-color: hsl(0, 0%, 100%);
+}
+
+/* buttons */
 button {
     color: hsl(0, 0%, 100%);
+    background-color: hsl(180, 66%, 49%);
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    padding: .5em;
+    font: inherit;
+    cursor: pointer;
+}
+
+.get-started {
+    border-radius: 20px;
+    width: 50%;
 }
 
 .copied {
     background-color: hsl(260, 8%, 14%);
 }
 
+/* form */
+form {
+    background-image: url(./images/bg-shorten-mobile.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: hsl(257, 27%, 26%);
+    padding: 1em;
+}
+
+input,
+button {
+    appearance: none;
+}
+
+form input,
+form button {
+    width: 100%;
+}
+
+input {
+    padding: .5em;
+}
+
+/* statistics section */
+.statistics div {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.today {
+    background-image: url(./images/bg-boost-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: hsl(257, 27%, 26%);
+}
+
+.today h2 {
+    color: hsl(0, 0%, 100%);
+}
+
 .error {
-    visibility: collapse;
+    display: none;
 }
 
 /* #url:invalid+.error {
     visibility: visible;
 } */
+
+/* footer */
+footer {
+    text-align: center;
+    background-color: hsl(260, 8%, 14%);
+    color: hsl(0, 0%, 100%);
+}
 
 .attribution {
     font-size: 11px;
