@@ -3,6 +3,7 @@ import { displayStorage } from "./dom";
 
 const form = document.querySelector("form");
 const link = document.querySelector("#url");
+const error = document.querySelector(".error");
 
 // array to store links
 let linksArray;
@@ -25,7 +26,8 @@ form.addEventListener('submit', (e) => {
 
     // check if input is valid
     if (!link.validity.valid) {
-        // display error message*
+        // display error message
+        error.style.visibility = "visible";
         return
     }
 
@@ -47,6 +49,7 @@ form.addEventListener('submit', (e) => {
 
         // reset text field
         link.value = '';
+        error.style.visibility = "collapse";
     }
 
 });
@@ -61,10 +64,17 @@ linksList.addEventListener('click', (e) => {
         let linkToCopy = element.closest("div").firstChild.data;
         // copy link to clipboard
         navigator.clipboard.writeText(linkToCopy);
-        // change text content of button to copied, all other buttons = copy*
-        // loop over all copy buttons and change to copy;*
-        // toggle style class*
+        // get copy buttons
+        let copyButtons = document.querySelectorAll(".copy");
+        // loop over all copy buttons and change to copy;
+        copyButtons.forEach(btn => {
+            btn.className = "copy";
+            btn.textContent = "copy";
+        });
+
+        // toggle style class and text content;
         element.textContent = 'Copied!';
+        element.classList.add("copied");
 
     }
 })
