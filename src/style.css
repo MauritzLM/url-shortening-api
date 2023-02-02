@@ -14,13 +14,46 @@ body {
 }
 
 header,
-main,
+.container,
 footer {
     padding: 1em;
 }
 
 header {
     position: relative;
+}
+
+.links-list div,
+.statistics-info div {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+
+}
+
+/* Typography */
+h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+    margin-bottom: .2em;
+}
+
+h1,
+h2,
+h3 {
+    color: hsl(260, 8%, 14%);
+}
+
+p {
+    color: hsl(257, 7%, 63%);
+}
+
+.info,
+h2,
+h3,
+p,
+nav,
+footer {
+    text-align: center;
 }
 
 /* navigation */
@@ -38,11 +71,12 @@ ion-icon {
 nav {
     display: none;
     position: absolute;
-    text-align: center;
     background-color: hsl(257, 27%, 26%);
     width: 90%;
     border-radius: 10px;
+    top: 3.4em;
     left: 1em;
+    padding: .5em 1em;
 }
 
 .dropdown:focus-within+nav {
@@ -52,6 +86,18 @@ nav {
 ul {
     list-style: none;
     padding-left: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+
+}
+
+nav ul:first-child {
+    border-bottom: .2px solid hsl(257, 7%, 63%);
+    padding-bottom: 1.2em;
 }
 
 nav li {
@@ -67,17 +113,34 @@ img {
     width: 100%;
 }
 
-main {
-    background-color: hsl(257, 7%, 63%);
+/* info section */
+.info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* main */
+.container {
+    background-color: hsl(260, 16%, 89%);
+    padding-top: 5em;
+    padding-bottom: 0;
 }
 
 /* shortened links */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
 .links-list div {
-    background-color: hsl(0, 0%, 100%);
+    padding: .5em;
 }
 
 /* buttons */
-button {
+button,
+.sign-up {
     color: hsl(0, 0%, 100%);
     background-color: hsl(180, 66%, 49%);
     border-radius: 5px;
@@ -86,6 +149,11 @@ button {
     padding: .5em;
     font: inherit;
     cursor: pointer;
+    display: block;
+}
+
+.sign-up {
+    border-radius: 20px;
 }
 
 .get-started {
@@ -103,7 +171,10 @@ form {
     background-position: right;
     background-repeat: no-repeat;
     background-color: hsl(257, 27%, 26%);
-    padding: 1em;
+    padding: 1.2em;
+    position: relative;
+    top: 5em;
+    border-radius: 10px;
 }
 
 input,
@@ -118,27 +189,57 @@ form button {
 
 input {
     padding: .5em;
+    font: inherit;
+    margin-bottom: .7em;
+    border-radius: 5px;
+}
+
+.error {
+    display: none;
 }
 
 /* statistics section */
-.statistics div {
-    background-color: hsl(0, 0%, 100%);
+.statistics-info div {
+    padding: 1.2em;
 }
 
+.statistics-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: hsl(260, 16%, 89%);
+}
+
+.statistics-info .image-div {
+    background-color: hsl(257, 27%, 26%);
+    border-radius: 50%;
+    object-fit: contain;
+    height: 80px;
+    width: 80px;
+}
+
+.image-div .image-div img {
+    height: 40px;
+    width: 40px;
+}
+
+/* today section */
 .today {
     background-image: url(./images/bg-boost-mobile.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-color: hsl(257, 27%, 26%);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .today h2 {
     color: hsl(0, 0%, 100%);
 }
 
-.error {
-    display: none;
-}
+
 
 /* #url:invalid+.error {
     visibility: visible;
@@ -146,7 +247,6 @@ input {
 
 /* footer */
 footer {
-    text-align: center;
     background-color: hsl(260, 8%, 14%);
     color: hsl(0, 0%, 100%);
 }
