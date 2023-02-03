@@ -32,9 +32,14 @@ header {
 
 /* Typography */
 h1 {
-    font-size: 3.8rem;
+    font-size: 4rem;
     line-height: 1.1;
     margin-bottom: .2em;
+}
+
+h3 {
+    font-size: 2.2rem;
+    margin-top: 0;
 }
 
 h1,
@@ -77,6 +82,7 @@ nav {
     top: 3.4em;
     left: 1em;
     padding: .5em 1em;
+    z-index: 999;
 }
 
 .dropdown:focus-within+nav {
@@ -114,17 +120,29 @@ img {
 }
 
 /* info section */
+.info img {
+    position: relative;
+    width: auto;
+    height: 330px;
+    top: .5em;
+}
+
 .info div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+h1+p {
+    margin-top: .5em;
+    margin-bottom: 1.2em;
+}
+
 /* main */
 .container {
     background-color: hsl(260, 16%, 89%);
     padding-top: 5em;
-    padding-bottom: 0;
+    padding-bottom: 5em;
 }
 
 /* shortened links */
@@ -134,8 +152,26 @@ img {
     gap: 1em;
 }
 
-.links-list div {
-    padding: .5em;
+.links-list p {
+    margin: 0;
+    padding: .7em 1em;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+    text-align: left;
+    color: hsl(260, 8%, 14%);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.links-list div div {
+    padding: 1em;
+    color: hsl(180, 66%, 49%);
+}
+
+.links-list div button {
+    margin-top: .7em;
+
 }
 
 /* buttons */
@@ -150,26 +186,31 @@ button,
     font: inherit;
     cursor: pointer;
     display: block;
+    font-weight: 700;
+    letter-spacing: .1rem;
 }
 
 .sign-up {
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 .get-started {
-    border-radius: 20px;
-    width: 50%;
+    border-radius: 30px;
+    width: 58%;
+    padding: .7em 1em;
+
 }
 
 .copied {
-    background-color: hsl(260, 8%, 14%);
+    background-color: hsl(257, 27%, 26%);
 }
 
 /* form */
 form {
     background-image: url(./images/bg-shorten-mobile.svg);
-    background-position: right;
+    background-position: right 0 top 0;
     background-repeat: no-repeat;
+    background-size: auto;
     background-color: hsl(257, 27%, 26%);
     padding: 1.2em;
     position: relative;
@@ -190,24 +231,35 @@ form button {
 input {
     padding: .5em;
     font: inherit;
-    margin-bottom: .7em;
+    margin-bottom: .85em;
     border-radius: 5px;
 }
 
 .error {
     display: none;
+    color: hsl(0, 87%, 67%);
+    position: relative;
+    bottom: .7em;
+    font-size: 1.4rem;
+    font-style: italic;
 }
 
 /* statistics section */
+.statistics {
+    margin-top: 3.8em;
+}
+
 .statistics-info div {
-    padding: 1.2em;
+    padding: 5em 1.2em 1.2em 1.2em;
+    position: relative;
 }
 
 .statistics-info {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 5em;
     background-color: hsl(260, 16%, 89%);
+    margin-top: 5em;
 }
 
 .statistics-info .image-div {
@@ -216,6 +268,12 @@ input {
     object-fit: contain;
     height: 80px;
     width: 80px;
+    position: absolute;
+    top: -2.2em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 1.2em;
 }
 
 .image-div .image-div img {
@@ -229,7 +287,7 @@ input {
     background-repeat: no-repeat;
     background-position: center;
     background-color: hsl(257, 27%, 26%);
-    padding: 1em;
+    padding: 4.4em 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -237,6 +295,7 @@ input {
 
 .today h2 {
     color: hsl(0, 0%, 100%);
+    margin: .6em 0;
 }
 
 
