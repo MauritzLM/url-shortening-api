@@ -308,11 +308,51 @@ input {
 footer {
     background-color: hsl(260, 8%, 14%);
     color: hsl(0, 0%, 100%);
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+h4 {
+    margin-top: 1em;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+    margin: 0;
+}
+
+footer li a {
+    color: hsl(257, 7%, 63%);
+}
+
+footer li a:hover {
+    color: hsl(180, 66%, 49%);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.social-links svg {
+    cursor: pointer;
+    fill: hsl(0, 0%, 100%);
+}
+
+.social-links svg:hover {
+    fill: hsl(180, 66%, 49%);
 }
 
 .attribution {
     font-size: 11px;
     text-align: center;
+    margin-top: 2em;
 }
 
 .attribution a {
