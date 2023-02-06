@@ -375,6 +375,12 @@ footer li a:hover {
 /* Media queries */
 @media screen and (min-width: 700px) {
 
+    header,
+    .container,
+    footer {
+        padding: 4em 9.2em;
+    }
+
     /* nav */
 
     header svg {
@@ -384,14 +390,15 @@ footer li a:hover {
     nav {
         display: flex;
         position: relative;
-        top: 0;
+        top: -0.5em;
+        left: 2em;
         background-color: inherit;
         width: auto;
         border-radius: 0;
         padding: 0;
         justify-content: space-between;
         align-items: center;
-        width: 80%;
+        width: 86%;
     }
 
     nav ul {
@@ -424,14 +431,17 @@ footer li a:hover {
     .info {
         display: flex;
         flex-direction: row-reverse;
+        margin-top: 3em;
     }
 
     .info img {
         height: auto;
+        position: relative;
+        left: 14em;
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 6rem;
         text-align: left;
     }
 
@@ -452,11 +462,12 @@ footer li a:hover {
         display: flex;
         justify-content: space-between;
         padding: 2.5em;
+        background-image: url(./images/bg-shorten-desktop.svg);
     }
 
     #url {
         margin-bottom: 0;
-        width: 60%;
+        width: 70%;
     }
 
     form button {
@@ -476,18 +487,35 @@ footer li a:hover {
 
     .links-list div div {
         align-items: center;
-        width: 30%;
+        width: 40%;
+        position: relative;
     }
 
     .links-list .copy {
         width: 30%;
         margin-top: 0;
+        position: absolute;
+        right: 1em;
     }
 
     /* statistics section */
 
     .statistics-info {
         flex-direction: row;
+        gap: 1.5em;
+        margin-bottom: 5em;
+    }
+
+    h2+p {
+        padding: 0 15em;
+    }
+
+    .statistics-info .image-div {
+        right: 12em;
+    }
+
+    .statistics-info div {
+        padding: 4em 1.4em 1.2em 1.4em;
     }
 
     .statistics-info div p,
@@ -495,10 +523,25 @@ footer li a:hover {
         text-align: left;
     }
 
+    .statistics-info div p {
+        font-size: 1.6rem;
+    }
+
+    /* today section */
+    .today {
+        background-image: url(./images/bg-boost-desktop.svg);
+        padding: 3em;
+    }
+
     /* footer */
     footer {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    footer ul,
+    h4 {
+        text-align: left;
     }
 
     .social-links {
