@@ -261,6 +261,18 @@ input {
     gap: 5em;
     background-color: hsl(260, 16%, 89%);
     margin-top: 5em;
+    position: relative;
+}
+
+.statistics-info .line {
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    background-color: hsl(180, 66%, 49%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .statistics-info .image-div {
@@ -373,12 +385,28 @@ footer li a:hover {
 }
 
 /* Media queries */
+
 @media screen and (min-width: 700px) {
 
     header,
-    .container,
+    .container {
+        padding: 5em;
+    }
+
+    .get-started {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    header,
     footer {
         padding: 4em 9.2em;
+    }
+
+    .container {
+        padding: 5.5em 9.2em;
     }
 
     /* nav */
@@ -422,6 +450,18 @@ footer li a:hover {
         font-weight: 700;
     }
 
+    nav li a:hover {
+        color: hsl(260, 8%, 14%);
+    }
+
+    .sign-up {
+        padding: .5em 1em;
+    }
+
+    .sign-up:hover {
+        color: hsl(0, 0%, 100%);
+    }
+
     .dropdown {
         visibility: collapse;
         z-index: -1;
@@ -432,16 +472,17 @@ footer li a:hover {
         display: flex;
         flex-direction: row-reverse;
         margin-top: 3em;
+        width: 110%;
     }
 
     .info img {
         height: auto;
         position: relative;
-        left: 14em;
+        left: 10em;
     }
 
     h1 {
-        font-size: 6rem;
+        font-size: 6.5rem;
         text-align: left;
     }
 
@@ -454,7 +495,7 @@ footer li a:hover {
     }
 
     .get-started {
-        width: auto;
+        width: 200px;
     }
 
     /* form */
@@ -463,15 +504,21 @@ footer li a:hover {
         justify-content: space-between;
         padding: 2.5em;
         background-image: url(./images/bg-shorten-desktop.svg);
+        top: 8em;
     }
 
     #url {
         margin-bottom: 0;
-        width: 70%;
+        width: 75%;
     }
 
     form button {
         width: 20%;
+    }
+
+    .error {
+        position: absolute;
+        bottom: 1em;
     }
 
     /* link list */
@@ -506,16 +553,39 @@ footer li a:hover {
         margin-bottom: 5em;
     }
 
+    .statistics h2 {
+        margin-bottom: .5em;
+    }
+
     h2+p {
-        padding: 0 15em;
+        padding: 0 16em;
+        margin-top: .5em;
     }
 
     .statistics-info .image-div {
         right: 12em;
     }
 
+    .statistics-info .line {
+        height: 10px;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
     .statistics-info div {
         padding: 4em 1.4em 1.2em 1.4em;
+    }
+
+    .detailed-records {
+        position: relative;
+        top: 2em;
+    }
+
+    .fully-customizable {
+        position: relative;
+        top: 4em;
     }
 
     .statistics-info div p,
