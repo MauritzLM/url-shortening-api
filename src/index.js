@@ -28,6 +28,9 @@ form.addEventListener('submit', (e) => {
     if (!link.validity.valid) {
         // display error message
         error.style.display = "block";
+        // red outline
+        link.style.border = "2px solid hsl(0, 87%, 67%)";
+
         return
     }
 
