@@ -72,7 +72,7 @@ linksList.addEventListener('click', (e) => {
         // loop over all copy buttons and change to copy;
         copyButtons.forEach(btn => {
             btn.className = "copy";
-            btn.textContent = "copy";
+            btn.textContent = "Copy";
         });
 
         // toggle style class and text content;
