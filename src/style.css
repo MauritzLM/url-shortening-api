@@ -488,6 +488,7 @@ footer li a:hover {
     .info {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: flex-end;
         margin-top: 3em;
         width: 110%;
     }
@@ -521,6 +522,7 @@ footer li a:hover {
         justify-content: space-between;
         padding: 2.5em;
         background-image: url(./images/bg-shorten-desktop.svg);
+        background-size: cover;
         top: 4em;
     }
 
@@ -618,6 +620,7 @@ footer li a:hover {
     /* today section */
     .today {
         background-image: url(./images/bg-boost-desktop.svg);
+        background-size: cover;
         padding: 3em;
     }
 
@@ -634,7 +637,7 @@ footer li a:hover {
 
     .footer-content {
         flex-direction: row;
-        gap: 4.5em;
+        gap: 5.5vw;
 
     }
 
@@ -651,4 +654,14 @@ footer li a:hover {
         margin-top: 0;
     }
 
+    footer li a {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    footer {
+        gap: 22vw;
+        justify-content: initial;
+    }
 }
