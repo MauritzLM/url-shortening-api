@@ -6,12 +6,12 @@
 html {
     font-size: 10px;
     font-family: 'Poppins', sans-serif;
+    height: 100vh;
 }
 
 body {
     font-size: 1.8rem;
     margin: 0;
-
 }
 
 header,
@@ -28,7 +28,7 @@ header {
 .links-list div,
 .statistics-info div {
     background-color: hsl(0, 0%, 100%);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* Typography */
@@ -574,7 +574,9 @@ footer li a:hover {
     }
 
     .statistics h2 {
+        font-size: 4rem;
         margin-bottom: .5em;
+        margin-top: 3em;
     }
 
     h2+p {
@@ -595,7 +597,12 @@ footer li a:hover {
     }
 
     .statistics-info div {
-        padding: 4em 1.5em 1.2em 1.5em;
+        padding: 4em 1.6em 1.2em 1.6em;
+    }
+
+    .statistics-info div h3 {
+        font-size: 2.4rem;
+        margin-bottom: .5em;
     }
 
     .detailed-records {
