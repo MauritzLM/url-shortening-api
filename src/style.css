@@ -11,6 +11,7 @@ html {
 body {
     font-size: 1.8rem;
     margin: 0;
+
 }
 
 header,
@@ -21,6 +22,7 @@ footer {
 
 header {
     position: relative;
+    overflow-x: clip;
 }
 
 .links-list div,
@@ -99,7 +101,6 @@ nav ul {
     display: flex;
     flex-direction: column;
     gap: .3em;
-
 }
 
 nav ul:first-child {
@@ -121,6 +122,7 @@ img {
 }
 
 /* info section */
+
 .info img {
     position: relative;
     width: auto;
@@ -311,10 +313,6 @@ input {
     margin: .6em 0;
 }
 
-/* #url:invalid {
-    border: 2px solid hsl(0, 87%, 67%);
-} */
-
 /* button hover */
 .sign-up:hover,
 button:hover {
@@ -335,6 +333,12 @@ footer {
     flex-direction: column;
     gap: 2em;
     position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 h4 {
@@ -393,9 +397,18 @@ footer li a:hover {
         padding: 5em;
     }
 
+    header {
+        padding-bottom: 0;
+    }
+
+    form {
+        top: 4.2em;
+    }
+
     .get-started {
         width: 200px;
     }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -403,6 +416,10 @@ footer li a:hover {
     header,
     footer {
         padding: 4em 9.2em;
+    }
+
+    header {
+        padding-bottom: 0;
     }
 
     .container {
@@ -495,7 +512,7 @@ footer li a:hover {
     }
 
     .get-started {
-        width: 200px;
+        width: 190px;
     }
 
     /* form */
@@ -504,7 +521,7 @@ footer li a:hover {
         justify-content: space-between;
         padding: 2.5em;
         background-image: url(./images/bg-shorten-desktop.svg);
-        top: 8em;
+        top: 4em;
     }
 
     #url {
@@ -530,6 +547,7 @@ footer li a:hover {
     .links-list p {
         align-self: center;
         border: none;
+        max-width: 600px;
     }
 
     .links-list div div {
@@ -539,7 +557,7 @@ footer li a:hover {
     }
 
     .links-list .copy {
-        width: 30%;
+        width: 120px;
         margin-top: 0;
         position: absolute;
         right: 1em;
@@ -575,17 +593,17 @@ footer li a:hover {
     }
 
     .statistics-info div {
-        padding: 4em 1.4em 1.2em 1.4em;
+        padding: 4em 1.5em 1.2em 1.5em;
     }
 
     .detailed-records {
         position: relative;
-        top: 2em;
+        top: 2.2em;
     }
 
     .fully-customizable {
         position: relative;
-        top: 4em;
+        top: 4.4em;
     }
 
     .statistics-info div p,
@@ -603,10 +621,21 @@ footer li a:hover {
         padding: 3em;
     }
 
+    .today h2 {
+        font-size: 4rem;
+        margin-top: 0;
+    }
+
     /* footer */
     footer {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        gap: 4.5em;
+
     }
 
     footer ul,
@@ -621,4 +650,5 @@ footer li a:hover {
     h4 {
         margin-top: 0;
     }
+
 }
