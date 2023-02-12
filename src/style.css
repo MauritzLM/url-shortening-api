@@ -143,9 +143,9 @@ h1+p {
 
 /* main */
 .container {
-    background-color: hsl(260, 16%, 89%);
     padding-top: 5em;
     padding-bottom: 5em;
+    background-color: #EFF1F7;
 }
 
 /* shortened links */
@@ -261,7 +261,7 @@ input {
     display: flex;
     flex-direction: column;
     gap: 5em;
-    background-color: hsl(260, 16%, 89%);
+    background-color: #EFF1F7;
     margin-top: 5em;
     position: relative;
 }
