@@ -11,12 +11,7 @@ function createLinkDiv(link, short) {
     const shortLinkDiv = document.createElement("div")
     shortLinkDiv.textContent = short;
 
-    // short link ?
-    // const shortLink = document.createElement("p");
-    // shortLink.textContent = short;
-    // shortLink.classList.add("short");
-
-    // button
+    // copy button
     const copyButton = document.createElement("button");
     copyButton.textContent = "Copy";
     copyButton.classList.add("copy");
@@ -25,7 +20,7 @@ function createLinkDiv(link, short) {
     div.append(orignaLink, shortLinkDiv)
 
     return div;
-}
+};
 
 // function to display shortened link using json
 export function displayResult(json) {
@@ -40,7 +35,7 @@ export function displayResult(json) {
     let linksDiv = document.querySelector(".links-list");
 
     linksDiv.appendChild(div);
-}
+};
 
 // display storage
 export function displayStorage(array) {
@@ -56,6 +51,4 @@ export function displayStorage(array) {
 
         linksDiv.appendChild(div);
     });
-}
-
-// mobile navbar
+};

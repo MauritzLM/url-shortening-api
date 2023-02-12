@@ -12,7 +12,6 @@ export async function getShortLink(request, array) {
     catch (error) {
         console.error(`Error fetching data: ${error.message}`)
     }
-
-}
+};
 
 
